@@ -1,5 +1,4 @@
-# TODO: Add the config via a volume mount for file beat
-# https://www.elastic.co/guide/en/beats/filebeat/current/running-on-docker.html
+# TODO: This is very wrong, I'll look into in the morning >.>
 filebeat.config:
   modules:
     path: ${path.config}/modules.d/*.yml
@@ -14,6 +13,4 @@ processors:
 - add_cloud_metadata: ~
 
 output.elasticsearch:
-  hosts: '${ELASTICSEARCH_HOSTS:elasticsearch:9200}'
-  username: '${ELASTICSEARCH_USERNAME:}'
-  password: '${ELASTICSEARCH_PASSWORD:}'
+  hosts: ["localhost:9200"]

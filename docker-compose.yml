@@ -62,6 +62,10 @@ services:
     container_name: fb
     environment: 
         - output.elasticsearch.hosts=["elasticsearch:9200"]
+    volumes:
+        - ./filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
+        - /var/lib/docker/containers:/var/lib/docker/containers:ro
+        - /var/run/docker.sock:/var/run/docker.sock:ro
 
 
 volumes:
